@@ -1,0 +1,26 @@
+  GNU nano 6.2                                               /etc/netplan/00-installer-config.yaml                                                        
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    eno1:
+      dhcp4: true
+    eno2:
+      dhcp4: true
+    eno3:
+      dhcp4: true
+    eno4:
+      dhcp4: true
+    enp67s0f0:
+      dhcp4: false
+      dhcp6: false
+      addresses: [10.29.254.112/24]
+      routes:
+       -  to: default
+          via: 10.29.254.1
+      nameservers:
+          addresses: [205.120.29.18,205.120.29.17,205.120.29.21]
+    enp67s0f1:
+      dhcp4: true
+  version: 2
+  # Fixes issue with networkd process
+  renderer: NetworkManager

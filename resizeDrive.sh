@@ -9,6 +9,8 @@ if [ $# -eq 1 ]; then
 fi
 
 
+git clone https://github.com/ab1nadi/bash_scripts.git
+
 
 echo -n  "Are you sure you want to resize the file system mounted on $mount_dir? y for yes:"
 read answer
