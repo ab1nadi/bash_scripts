@@ -2,6 +2,9 @@
 
 apt update
 
+# install kvm 
+apt -y install bridge-utils cpu-checker libvirt-clients libvirt-daemon qemu qemu-kvm
+
 # get version environment variables
 . /etc/os-release
 
