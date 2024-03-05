@@ -3,24 +3,24 @@
 apt update
 
 # install kvm 
-apt -y install bridge-utils cpu-checker libvirt-clients libvirt-daemon qemu qemu-kvm
+yes | apt -y install bridge-utils cpu-checker libvirt-clients libvirt-daemon qemu qemu-kvm
 
 # get version environment variables
 . /etc/os-release
 
 # install cockpit
-apt install -t ${VERSION_CODENAME}-backports cockpit
+yes | apt install -t ${VERSION_CODENAME}-backports cockpit
 
 # install cockpit applications
-apt install -t ${VERSION_CODENAME}-backports cockpit-storaged
+yes | apt install -t ${VERSION_CODENAME}-backports cockpit-storaged
 
-apt install -t ${VERSION_CODENAME}-backports cockpit-networkmanager
+yes | apt install -t ${VERSION_CODENAME}-backports cockpit-networkmanager
 
-apt install -t ${VERSION_CODENAME}-backports cockpit-packagekit
+yes | apt install -t ${VERSION_CODENAME}-backports cockpit-packagekit
 
-apt install -t ${VERSION_CODENAME}-backports cockpit-virtual-machines
+yes | apt install -t ${VERSION_CODENAME}-backports cockpit-machines
 
-apt install -t ${VERSION_CODENAME}-backports cockpit-podman
+yes | apt install -t ${VERSION_CODENAME}-backports cockpit-podman
 
 
 echo "Done"
