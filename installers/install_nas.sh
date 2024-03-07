@@ -67,10 +67,15 @@ if [ -z "$targetname" ]; then
 fi
 
 # create mount directory if it doesnt already exist
-mkdir $mount
+if test -d /path/to/directory; then
+  echo "Mount point already exists."
+else 
+    mkdir $mount
+    echo "Created mount point."
+fi
 
 
-target=iscsiadm -m discovery -t sendtargets -p "$ip" | awk -v targ="$targetname" '$2 ~ targ {print $2}'
+target=$(iscsiadm -m discovery -t sendtargets -p "$ip" | awk -v targ="$targetname" '$2 ~ targ {print $2}')
 
 
 
