@@ -1,0 +1,2 @@
+These are helper scripts not meant to be run on their own. Most likely these scripts are either being used by an installer or copied into /usr/local/bin 
+so that they can be run on startup or some such thing. 
