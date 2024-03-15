@@ -1,11 +1,32 @@
 #!/bin/bash
+#
+# Script Name: resizeDrive.sh
+#
+# Description: Runs resize 2fs on a mounted file system.
+# If you run the script without args it will resize the last passed mount point.
+#
+# Author: Abinadi Swapp
+# Date: March 15, 2024
+# Version: 1.0
+#
+# Usage: sudo ./resizeDrive.sh 
+# or 
+#        sudo ./resizeDrive.sh /mount/point
+#
 
-mount_dir="/mnt/iscsi"
+
+./vars.sh # load variables
+source ../lib/functions.sh # load helper functions
 
 
 # Check if the user provided a mount point
 if [ $# -eq 1 ]; then
     mount_dir="$1"
+
+    echo "Updating the mount_dir variable so next time you can just run this command without args" 
+
+    #call setvar helper function
+    setVar vars.sh mount_dir $mount_dir
 fi
 
 
