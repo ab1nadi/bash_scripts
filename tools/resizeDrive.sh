@@ -23,14 +23,13 @@ source ../lib/functions.sh # load helper functions
 if [ $# -eq 1 ]; then
     mount_dir="$1"
 
-    echo "Updating the mount_dir variable so next time you can just run this command without args" 
+    echo "*** mount_dir updated to $mount_dir " 
 
     #call setvar helper function
     setVar vars.sh mount_dir $mount_dir
 fi
 
 
-git clone https://github.com/ab1nadi/bash_scripts.git
 
 
 echo -n  "Are you sure you want to resize the file system mounted on $mount_dir? y for yes:"
